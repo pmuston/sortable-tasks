@@ -2,10 +2,11 @@
 Simple demo of using Django 1.9 order_with_respect_to and jQuery sortable.
 
 steps:
-pip install -r requirements.txt
-createdb -Upostgres tasks
-python manage.py migrate
-python manage.py bower install
+
+    pip install -r requirements.txt
+    createdb -Upostgres tasks
+    python manage.py migrate
+    python manage.py bower install
 
 important code
 
