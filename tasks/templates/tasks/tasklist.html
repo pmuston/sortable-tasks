@@ -1,0 +1,17 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<div class="row medium-12 large-12 columns">
+<h1>{{ object.name }}</h1>
+<ul id="sortable">
+    {% for task in tasks %}
+    <li id="task_{{task.id}}"><i class="fa fa-sort"></i> {{ task.name }}
+    <a href="{% url "task_edit" task.id %}">edit</a>
+    <a href="{% url "task_delete" task.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url "task_new" object.id %}">New</a>
+</div>
+{% endblock %}

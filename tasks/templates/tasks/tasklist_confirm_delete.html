@@ -1,0 +1,10 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<div class="row medium-12 large-12 columns">
+<form method="post">{% csrf_token %}
+    Are you sure you want to delete "{{ object }}" ?
+    <input type="submit" value="Submit" />
+</form>
+</div>
+{% endblock %}

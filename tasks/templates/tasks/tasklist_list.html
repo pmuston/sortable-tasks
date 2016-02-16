@@ -1,0 +1,18 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<div class="row medium-12 large-12 columns">
+<h1>TaskLists</h1>
+<ul>
+    {% for tasklist in object_list %}
+    <li>{{ tasklist.name }}  :
+    <a href="{% url 'tasklist' tasklist.id %}">view</a>
+    <a href="{% url "tasklist_edit" tasklist.id %}">edit</a>
+    <a href="{% url "tasklist_delete" tasklist.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url "tasklist_new" %}">New</a>
+</div>
+{% endblock %}
