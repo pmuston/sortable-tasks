@@ -10,6 +10,7 @@ python manage.py bower install
 important code
 
 model.py
+
     class Task(models.Model):
         tasklist = models.ForeignKey(TaskList, null=False)
     ...
@@ -17,6 +18,7 @@ model.py
             order_with_respect_to = 'tasklist'
 
 tasklist.html
+
     <ul id="sortable">
         {% for task in tasks %}
         <li id="task_{{task.id}}"><i class="fa fa-sort"></i> {{ task.name }}
@@ -27,9 +29,11 @@ tasklist.html
     </ul>
 
 urls.py
+
     url(r'^(?P<pk>\d+)/task_sort$', views.task_sort, name='task_sort'),
 
 view.html
+
     def task_sort(request, pk, template_name=None):
         task_list = get_object_or_404(TaskList, pk=pk)
         tasks = Task.objects.filter(tasklist=task_list)
@@ -42,6 +46,7 @@ view.html
         return HttpResponse(status=200)
 
 base.html
+
     $(function () {
         function getCookie(name) {
             var cookieValue = null;
