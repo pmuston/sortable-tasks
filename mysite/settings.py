@@ -135,6 +135,7 @@ BOWER_INSTALLED_APPS = (
     'foundation-sites',
     'motion-ui',
     'jquery-ui',
+    'js-cookie',
     'components-font-awesome',
 )
 LOGIN_REDIRECT_URL = '/'
